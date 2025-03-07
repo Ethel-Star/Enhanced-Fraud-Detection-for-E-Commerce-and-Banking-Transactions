@@ -6,6 +6,7 @@ import logging
 from io import StringIO
 from sklearn.preprocessing import StandardScaler
 
+
 class FraudDataProcessor:
     def __init__(self, fraud_data, creditcard_data, ip_to_country):
         # Initialize datasets as copies to preserve original data
