@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from typing import Optional
 
-
 class FraudEDA:
     def __init__(
         self,
