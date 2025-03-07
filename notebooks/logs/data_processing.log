@@ -1,0 +1,25 @@
+2025-03-07 15:59:08,885 - INFO - Starting data type cleaning...
+2025-03-07 15:59:27,241 - INFO - Checking missing values...
+2025-03-07 15:59:27,339 - INFO - Checking for duplicates...
+2025-03-07 15:59:32,677 - WARNING - Removed 1081 duplicates from credit data
+2025-03-07 15:59:32,690 - INFO - Performing consistency validation...
+2025-03-07 15:59:32,713 - INFO - Generating target distribution visualization...
+2025-03-07 15:59:39,189 - INFO - Fraud data saved to E:\DS+ML\AIM3\WEEK.12\Data/cleaned_fraud.csv
+2025-03-07 15:59:56,847 - INFO - Credit card data saved to E:\DS+ML\AIM3\WEEK.12\Data/cleaned_credit.csv
+2025-03-07 15:59:57,182 - INFO - IP data saved to E:\DS+ML\AIM3\WEEK.12\Data/cleaned_ip.csv
+2025-03-07 16:00:07,398 - INFO - Starting fraud data distribution analysis
+2025-03-07 16:00:15,353 - INFO - Completed fraud data distribution analysis
+2025-03-07 16:00:15,416 - INFO - Starting credit card data distribution analysis
+2025-03-07 16:00:20,640 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-03-07 16:00:21,011 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-03-07 16:00:22,150 - INFO - Completed credit card data distribution analysis
+2025-03-07 16:00:22,160 - INFO - Starting fraud data relationship analysis
+2025-03-07 16:00:44,256 - INFO - Completed fraud data relationship analysis
+2025-03-07 16:00:44,271 - INFO - Starting correlation analysis
+2025-03-07 16:00:51,812 - INFO - Completed correlation analysis
+2025-03-07 16:00:51,826 - INFO - Starting IP to country mapping
+2025-03-07 16:00:52,126 - INFO - Completed IP to country mapping
+2025-03-07 16:00:53,463 - INFO - Data saved successfully to E:\DS+ML\AIM3\WEEK.12\Data/processed_fraud_data.csv
+2025-03-07 16:00:55,638 - INFO - Starting feature engineering pipeline
+2025-03-07 16:00:55,638 - INFO - Engineering transaction features
+2025-03-07 16:00:56,178 - ERROR - Pipeline failed: window must be an integer 0 or greater
