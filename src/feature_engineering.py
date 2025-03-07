@@ -134,24 +134,15 @@ class FraudFeatureEngineer:
         except Exception as e:
             self.logger.error("Feature engineering pipeline failed: %s", str(e))
             raise
-
-
 class FeatureCredit:
-    def __init__(self, data: pd.DataFrame, output_path: str, required_columns: list = None):
-        """
-        Initialize the feature engineer for credit data.
-        :param data: Input DataFrame containing credit transaction data.
-        :param output_path: Path to save processed data.
-        :param required_columns: List of required columns in the dataset.
-        """
-        self.logger = self._setup_logger()
+    def __init__(self, data: pd.DataFrame, output_path: str):
         self.data = data.copy()
-        self.output_path = output_path
+        self.output_path = output_path  # Initialize output_path first
+        self.logger = self._setup_logger()
         self.scaler = None
 
         # Validate required columns
-        if required_columns is None:
-            required_columns = ["Time", "Amount"]
+        required_columns = ["Time", "Amount"]
         missing = [col for col in required_columns if col not in self.data.columns]
         if missing:
             self.logger.error(f"Missing required columns: {missing}")
@@ -209,7 +200,7 @@ class FeatureCredit:
             self.logger.error(f"Error creating time features: {str(e)}")
             raise
 
-    def save_processed_data(self, filename: str ="\featured_credit_data.csv"):
+    def save_processed_data(self, filename: str ="featured_credit_data.csv"):
         """Save the processed DataFrame to CSV."""
         try:
             output_file = os.path.join(self.output_path, filename)
