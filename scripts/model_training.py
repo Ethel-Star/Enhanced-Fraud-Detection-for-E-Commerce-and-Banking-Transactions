@@ -15,6 +15,7 @@ from sklearn.preprocessing import LabelEncoder
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Conv1D, MaxPooling1D, LSTM, SimpleRNN, Flatten
+import matplotlib.pyplot as plt
 
 class ModelTrainer:
     def __init__(self, fraud_file, credit_file):
@@ -301,6 +302,7 @@ class ModelTrainer:
         return {i: weight for i, weight in enumerate(class_weights)}
 
     def plot_comparisons(self):
+        # Now plt is properly imported
         fig, axes = plt.subplots(3, 2, figsize=(18, 12))
         metrics = ['AUC', 'Accuracy', 'F1-Score']
         datasets = ['credit', 'fraud']
@@ -314,11 +316,9 @@ class ModelTrainer:
                 ax.set_ylabel(metric, fontsize=12)
                 ax.grid(axis='y', linestyle='--', alpha=0.7)
                 
-                # Add data labels
                 for container in ax.containers:
                     ax.bar_label(container, fmt='%.3f', padding=3)
                 
-                # Add legend in top right subplot
                 if i == 0 and j == 1:
                     handles = [plt.Rectangle((0,0),1,1, color='skyblue') for _ in data.index]
                     fig.legend(handles, data.index, loc='upper center', ncol=4, fontsize=12)
